@@ -16,17 +16,23 @@
         <div class="trait"></div>
         <form>
             <select name="question" id="question">
-                <option value="laquestion">Que voulez vous faire</option>
+                <option value="laquestion" selected>Que voulez vous faire ?</option>
                 <option value="option1">Ajouter un contact</option>
                 <option value="option2">voir les contacts</option>
                 <option value="option3">voir le nombre de contact</option>
             </select>
         </form>
-        <div id="contenu"></div>
+        <div id="contenu">
+            <form>
+                <input type="text" name="nom" value="" id="nom" placeholder="Nom"/>
+                <input type="text" name="prenom" value="" id="prenom" placeholder="Prénom"/>
+                <input type="text" name="numero" value="" id="numero" placeholder="Numéro de téléphone"/>
+            </form>
+        </div>
+        <footer>
+            <p>&copy; Jeoffrey and Pascal</p>
+        </footer>
     </section>
-    <footer>
-        
-    </footer>
-    <script type="text/javascript" src="rep.js"></script>
+    <script src="rep.js"></script>
 </body>
 </html>
