@@ -11,6 +11,10 @@ hr{
   width: 80%;
 }
 
+.trait{
+  border-bottom: 1px solid #6f5a3e;
+}
+
 section{
   max-width: 350px;
   width: 100%;
@@ -19,6 +23,7 @@ section{
   margin-top: 10px;
   text-align: center;
   border-radius: 10px;
+  border: 1px solid #6f5a3e;
   background-color: #F6F6F6;
   box-shadow: 1px 1px 5px grey;
 }
@@ -28,26 +33,47 @@ section img{
 }
 
 #question{
-  width: 60%;
+  width: 70%;
   margin-top: 15px;
 }
 
 #contenu{
-  width: 60%;
-  height: 250px;
+  width: 70%;
+  min-height: 250px;
   margin: auto;
   margin-top: 20px;
+  padding: 10px;
   background-color: #cbae87;
   border-radius: 10px;
   border: 1px solid grey;
-  box-shadow: -1px -1px 5px grey;
+  box-shadow: inset 1px 1px 5px grey;
 }
 
+#contenu form input{
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.button_form{
+
+  width: 60%;
+  font-family: 'Comic sans MS', cursive;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+
 footer{
-  border-top: 1px solid grey;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  border-top: 1px solid #6f5a3e;
 }
 
 footer p{
   padding-bottom: 5px;
-  font-size: 12px;
+  font-family: 'Comic sans MS', cursive;
+  /* font-weight: lighter; */
+  color: #6f5a3e;
+  font-size: 10px;
 }
