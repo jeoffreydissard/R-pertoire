@@ -1,31 +1,39 @@
 
-h1{
+/* Background */
+
+#back{
+  display: flex;
+  height: 600px;
+  background-color: grey;
+}
+
+p, h1{
   font-family: 'Comic sans MS', cursive;
   font-weight: lighter;
   color: #6f5a3e;
-  font-size: 22px;
+
 }
 
-hr{
-  color: #cbae87;
-  width: 80%;
+h1{
+  font-size: 20px;
+  margin: 5px;
 }
 
 .trait{
+  width: 100%;
   border-bottom: 1px solid #6f5a3e;
 }
 
 section{
-  max-width: 350px;
+  max-width: 280px;
   width: 100%;
   padding-top: 15px;
   margin: auto;
-  margin-top: 10px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 15px;
   border: 1px solid #6f5a3e;
   background-color: #F6F6F6;
-  box-shadow: 1px 1px 5px grey;
+  box-shadow: 1px 1px 5px black;
 }
 
 section img{
@@ -33,35 +41,59 @@ section img{
 }
 
 #question{
-  width: 70%;
+  width: 77%;
   margin-top: 15px;
+  height: 28px;
 }
+
+
+
+select{
+  cursor: pointer;
+  font-family: 'Comic sans MS', cursive;
+  font-size: 12px;
+}
+
+option{
+  font-size: 12px;
+  padding-top: 5px,
+}
+
+/* Contenu du formulaire */
 
 #contenu{
   width: 70%;
-  min-height: 250px;
+  height: 200px;
+  overflow: auto;
   margin: auto;
   margin-top: 20px;
   padding: 10px;
   background-color: #cbae87;
   border-radius: 10px;
   border: 1px solid grey;
-  box-shadow: inset 1px 1px 5px grey;
+  box-shadow: inset 1px 1px 5px black;
 }
 
-#contenu form input{
-  margin-top: 10px;
-  text-decoration: none;
-}
+/* Section ajouter un contact */
 
-.button_form{
-
-  width: 60%;
-  font-family: 'Comic sans MS', cursive;
+input{
+  cursor: pointer;
+  margin-top: 8px;
+  width: 90%;
   font-size: 12px;
-  margin-top: 10px;
 }
 
+input.button{
+  width: 50%;
+  font-size: 12px;
+}
+
+input.button:hover{
+  box-shadow: 1px 1px 2px black;
+}
+
+
+/* Pied de page */
 
 footer{
   display: flex;
@@ -72,8 +104,5 @@ footer{
 
 footer p{
   padding-bottom: 5px;
-  font-family: 'Comic sans MS', cursive;
-  /* font-weight: lighter; */
-  color: #6f5a3e;
   font-size: 10px;
 }
