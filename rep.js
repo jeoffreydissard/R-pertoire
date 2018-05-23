@@ -6,10 +6,7 @@ function LeContact(NOM, PRENOM, NUMERO){
     this.PRENOM = PRENOM;
     this.NUMERO = NUMERO;
 };
-
 var key = 0;
-var LeContactkey = "LeContact";
-var LeContactLength = LeContact.length;
 var Question = document.getElementById('question');
 Question.addEventListener('click', (NewPage) => {
     if (Question.value == "option1") {
@@ -24,7 +21,6 @@ Question.addEventListener('click', (NewPage) => {
             NOM = document.getElementById('nom').value;
             PRENOM = document.getElementById('prenom').value;
             NUMERO = document.getElementById('numero').value;
-            /*LeContactkey = ("LeContact" + key);*/
             ++key;
 
             LeContact[key] = new LeContact(NOM, PRENOM, NUMERO);
@@ -35,9 +31,8 @@ Question.addEventListener('click', (NewPage) => {
     } else if (Question.value == "option2") {
         document.getElementById('contenu').innerHTML = '<h2>Liste de vos contact</h2>' +
             '<div id="ListeContact"></div>';
-        ;
 
-        for (var i = 1; i < LeContactLength+1; i++) {
+        for (var i = 1; i < key+1; i++) {
             var div = document.createElement('div');
             div.innerHTML = '<table>' +
                 '<tbody>' +
