@@ -1,35 +1,19 @@
-/*function getVals() {
-    var elems = document.getElementById("formulaire").elements;
-    var elemArray = new Object();
-    for (var i = 0; i < elems.length; i++) {
-        if (elems[i].type == "text")
-            elemArray[elems[i].id] = elems[i].value;
-    }
-    checkVals(elemArray);
-    return false;
-}
-
-// check values
-function checkVals(elemArray) {
-
-    var str = "";
-    for (var key in elemArray) {
-        str+=key + "," + elemArray[key] + " ";
-    }
-
-    document.getElementById("result").innerHTML = str;
-}*/
-
-
 var NOM = "";
 var PRENOM = "";
 var NUMERO = "";
+function LeContact(NOM, PRENOM, NUMERO){
+    this.NOM = NOM;
+    this.PRENOM = PRENOM;
+    this.NUMERO = NUMERO;
+};
 
-var NombreContact = 0;
+var key = 0;
+var LeContactkey = "LeContact";
+var LeContactLength = LeContact.length;
 var Question = document.getElementById('question');
 Question.addEventListener('click', (NewPage) => {
     if (Question.value == "option1") {
-        document.getElementById('contenu').innerHTML = '<form id="formulaire">' +
+        document.getElementById('contenu').innerHTML = '<form id="formulaire" method="post">' +
             '<input type="text" name="nom" value="" id="nom" placeholder="Nom"/>' +
             '<input type="text" name="prenom" value="" id="prenom" placeholder="Prénom"/>' +
             '<input type="text" name="numero" value="" id="numero" placeholder="Numéro de téléphone"/>' +
@@ -40,78 +24,33 @@ Question.addEventListener('click', (NewPage) => {
             NOM = document.getElementById('nom').value;
             PRENOM = document.getElementById('prenom').value;
             NUMERO = document.getElementById('numero').value;
+            /*LeContactkey = ("LeContact" + key);*/
+            ++key;
 
-            var ListeContact = [];
-            var LeContact = [NOM, PRENOM, NUMERO];
-            var ListeContactLength = ListeContact.length;
+            LeContact[key] = new LeContact(NOM, PRENOM, NUMERO);
 
-
-            for (var i = 0; i < ListeContactLength; i++){
-                ListeContact.push(LeContact[i]);
-            }
-            console.log(LeContact);
-            alert(LeContact);
+            console.log(LeContact[key]);
         });
 
     } else if (Question.value == "option2") {
-
-
         document.getElementById('contenu').innerHTML = '<h2>Liste de vos contact</h2>' +
-            '<table id="Lecontact">' +
-            '<tbody>' +
-            '<tr><td>' + NOM + '</td></tr>' +
-            '<tr><td>' + PRENOM + '</td></tr>' +
-            '<tr><td>' + NUMERO + '</td></tr>' +
-            '</tbody>' +
-            '</table>';
+            '<div id="ListeContact"></div>';
+        ;
 
+        for (var i = 1; i < LeContactLength+1; i++) {
+            var div = document.createElement('div');
+            div.innerHTML = '<table>' +
+                '<tbody>' +
+                '<tr><td>' + LeContact[i].NOM + '</td></tr>' +
+                '<tr><td>' + LeContact[i].PRENOM + '</td></tr>' +
+                '<tr><td>' + LeContact[i].NUMERO + '</td></tr>' +
+                '</tbody>' +
+                '</table>';
+            document.getElementById('ListeContact').appendChild(div)
+        }
     } else if (Question.value == "option3") {
-        document.getElementById('contenu').innerHTML = '<h2>Vous avez ' + NombreContact + ' contact</h2>';
+        document.getElementById('contenu').innerHTML = '<h2>Vous avez ' + key + ' contact</h2>';
     } else {
         document.getElementById('contenu').innerHTML = "<h2>Choisir une option</h2>";
     }
 });
-
-
-
-
-
-
-/*
-
-    var SPACE = 'buttonspace'; // Element ID of Blank Space field
-    var NOM = document.getElementById('nom').value; // Field code of text field
-    var PRENOM = document.getElementById('prenom').value; // Field code of text field
-    var NUMERO = document.getElementById('numero').value; // Field code of number field
-    var BUTTON = document.getElementById('numero');
-
-    var TABLE = 'mytable'; // Field code of table field
-    var TABLE_NOM = 'nom_in_table'; // Field code of text field in a table
-    var TABLE_PRENOM = 'prenom_in_table'; // Field code of text field in a table
-    var TABLE_NUMERO = 'numero_in_table'; // Field code of number field a table
-
-
-        elSpace.addEventListener('click', function() {
-
-            // add row with data into table
-            var addData = {};
-            addData.value = {};
-            addData.value[TABLE_NOM] = {
-                "type": "SINGLE_LINE_TEXT",
-                "value": NOM
-            };
-            addData = {};
-            addData.value = {};
-            addData.value[TABLE_PRENOM] = {
-                "type": "SINGLE_LINE_TEXT",
-                "value": PRENOM
-            };
-            addData.value[TABLE_NUMERO] = {
-                "type": "NUMBER",
-                "value": NUMERO
-            };
-            TABLE.value.push(addData);
-
-            console.log(addData);
-            console.log(TABLE);
-        });*/
