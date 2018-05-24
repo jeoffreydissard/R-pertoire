@@ -39,7 +39,7 @@ h1{
   background-color: #fcfcfc;
   overflow: scroll;
 }
-.form::-webkit-scrollbar { width: 0 !important; }
+.form::-webkit-scrollbar { display: none;}
 .form { -ms-overflow-style: none; }
 .form { overflow: -moz-scrollbars-none; }
 .form img{
