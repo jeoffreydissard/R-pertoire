@@ -1,108 +1,144 @@
-
 /* Background */
-
 #back{
   display: flex;
-  height: 600px;
-  background-color: grey;
+  justify-content: center;
+  width: 354px;
+  height: 700px;
+  background-image: url("images/iphone2.png");
+  background-position: center;
+  margin: auto;
 }
-
+body{
+  /* background-color: grey; */
+}
 p, h1{
   font-family: 'Comic sans MS', cursive;
   font-weight: lighter;
   color: #6f5a3e;
-
 }
-
 h1{
   font-size: 20px;
   margin: 5px;
 }
-
+.subtitle{
+  font-size: 10px;
+  font-family: 'Comic sans MS', cursive;
+}
 .trait{
   width: 100%;
   border-bottom: 1px solid #6f5a3e;
 }
-
-section{
-  max-width: 280px;
-  width: 100%;
-  padding-top: 15px;
-  margin: auto;
+.form{
+  width: 324px;
+  position:  relative;
+  height: 527px;
+  top: 82px;
+  left: 2px;
   text-align: center;
-  border-radius: 15px;
   border: 1px solid #6f5a3e;
-  background-color: #F6F6F6;
-  box-shadow: 1px 1px 5px black;
+  background-color: #fcfcfc;
+  overflow: scroll;
 }
-
-section img{
+.form::-webkit-scrollbar { width: 0 !important; }
+.form { -ms-overflow-style: none; }
+.form { overflow: -moz-scrollbars-none; }
+.form img{
   width: 25%;
-}
-
-#question{
-  width: 77%;
   margin-top: 15px;
-  height: 28px;
 }
-
-
-
+#question{
+  width: 215px;
+  margin-top: 15px;
+}
 select{
   cursor: pointer;
   font-family: 'Comic sans MS', cursive;
   font-size: 12px;
 }
-
 option{
   font-size: 12px;
   padding-top: 5px,
 }
-
 /* Contenu du formulaire */
-
+#ListeContact{
+  width: 100%;
+}
+h2{
+  border-bottom: 1px solid grey;
+  padding-bottom: 15px;
+  font-family: 'Comic sans MS', cursive;
+  font-weight: lighter;
+  color: #4f4941;
+  margin: 0px;
+}
 #contenu{
-  width: 70%;
-  height: 200px;
-  overflow: auto;
+  width: 225px;
+  min-height: 230px;
   margin: auto;
-  margin-top: 20px;
   padding: 10px;
-  background-color: #cbae87;
+  margin-top: 5px;
+  background-color: #ddd5c9;
   border-radius: 10px;
   border: 1px solid grey;
   box-shadow: inset 1px 1px 5px black;
 }
-
+#formulaire{
+  margin-top: 15px;
+}
 /* Section ajouter un contact */
-
-input{
-  cursor: pointer;
-  margin-top: 8px;
-  width: 90%;
-  font-size: 12px;
+table {
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid grey;
+  border-left:  1px solid grey;
+  border-right:  1px solid grey;
+  padding: 5px;
+  background-color #f4f4f4;
+  background-color: #f8f8f8;
+  color: #444864;
 }
-
-input.button{
-  width: 50%;
-  font-size: 12px;
-}
-
-input.button:hover{
-  box-shadow: 1px 1px 2px black;
-}
-
 
 /* Pied de page */
-
 footer{
   display: flex;
   justify-content: center;
   margin-top: 20px;
   border-top: 1px solid #6f5a3e;
 }
-
 footer p{
   padding-bottom: 5px;
   font-size: 10px;
+}
+input, select {
+  /* display: inline-block; */
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 5px 15px;
+  border: 1px solid #b7b7b7;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font: normal 12px/normal "Times New Roman", Times, serif;
+  color: rgb(29, 33, 35);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: -webkit-linear-gradient(-45deg, rgba(252,252,252,1) 0, rgba(232,232,232,1) 100%);
+  background: -moz-linear-gradient(135deg, rgba(252,252,252,1) 0, rgba(232,232,232,1) 100%);
+  background: linear-gradient(135deg, rgba(252,252,252,1) 0, rgba(232,232,232,1) 100%);
+  background-position: 50% 50%;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+  -webkit-box-shadow: 1px 1px 7px 1px rgba(0,0,0,0.2) inset;
+  box-shadow: 1px 1px 7px 1px rgba(0,0,0,0.2) inset;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.66);
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  width: 180px;
+  margin-bottom: 10px;
 }

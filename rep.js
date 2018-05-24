@@ -10,7 +10,8 @@ var key = 0;
 var Question = document.getElementById('question');
 Question.addEventListener('click', (NewPage) => {
     if (Question.value == "option1") {
-        document.getElementById('contenu').innerHTML = '<form id="formulaire" method="post">' +
+        document.getElementById('contenu').innerHTML = '<h2>Ajouter un contact</h2>' +
+            '<form id="formulaire" method="post">' +
             '<input type="text" name="nom" value="" id="nom" placeholder="Nom"/>' +
             '<input type="text" name="prenom" value="" id="prenom" placeholder="Prénom"/>' +
             '<input type="text" name="numero" value="" id="numero" placeholder="Numéro de téléphone"/>' +
