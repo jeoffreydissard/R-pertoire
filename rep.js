@@ -1,15 +1,15 @@
 var NOM = "";
 var PRENOM = "";
 var NUMERO = "";
-function LeContact(NOM, PRENOM, NUMERO){
+function LeContact(NOM, PRENOM, NUMERO){ // Objet LeContact
     this.NOM = NOM;
     this.PRENOM = PRENOM;
     this.NUMERO = NUMERO;
 };
 var key = 0;
 var Question = document.getElementById('question');
-Question.addEventListener('click', (NewPage) => {
-    if (Question.value == "option1") {
+Question.addEventListener('click', (NewPage) => {           //Fonction qui change la page avec les if, else if et else
+    if (Question.value == "option1") {                      // Page ajouter un contact
         document.getElementById('contenu').innerHTML = '<h2>Ajouter un contact</h2>' +
             '<form id="formulaire" method="post">' +
             '<input type="text" name="nom" value="" id="nom" placeholder="Nom"/>' +
@@ -18,7 +18,7 @@ Question.addEventListener('click', (NewPage) => {
             '<input type="button" id="Boutton" value="Ajouter un contact"/>' +
             '</form>';
         var Boutton = document.getElementById('Boutton');
-        Boutton.addEventListener('click', (NewArray) => {
+        Boutton.addEventListener('click', (NouveauContact) => {   // Fonction qui ajoute un nouveau contact dans l'objet
             NOM = document.getElementById('nom').value;
             PRENOM = document.getElementById('prenom').value;
             NUMERO = document.getElementById('numero').value;
@@ -29,11 +29,11 @@ Question.addEventListener('click', (NewPage) => {
             console.log(LeContact[key]);
         });
 
-    } else if (Question.value == "option2") {
+    } else if (Question.value == "option2") {        // Page Liste de contact
         document.getElementById('contenu').innerHTML = '<h2>Liste de vos contact</h2>' +
             '<div id="ListeContact"></div>';
 
-        for (var i = 1; i < key+1; i++) {
+        for (var i = 1; i < key+1; i++) {               // Boucle qui permet d'afficher les contacts
             var div = document.createElement('div');
             div.innerHTML = '<table>' +
                 '<tbody>' +
@@ -44,9 +44,9 @@ Question.addEventListener('click', (NewPage) => {
                 '</table>';
             document.getElementById('ListeContact').appendChild(div)
         }
-    } else if (Question.value == "option3") {
+    } else if (Question.value == "option3") {       // Page nombre de contact
         document.getElementById('contenu').innerHTML = '<h2>Vous avez ' + key + ' contact</h2>';
-    } else {
+    } else {     // Page d'accueil
         document.getElementById('contenu').innerHTML = "<h2>Choisir une option</h2>";
     }
 });
